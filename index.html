@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShreeVed Physio Care - Move, Feel & Live Better</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5fb4;
+            --secondary-color: #e01b24;
+            --accent-color: #f8f9fa;
+            --dark-color: #343a40;
+            --light-color: #ffffff;
+            --text-color: #333;
+            --gray-light: #f6f6f6;
+            --gray-medium: #e9ecef;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .doctor-info {
+    text-align: left;       /* Ensure all text is left aligned */
+    padding: 15px;
+    line-height: 1.6;
+}
+
+.doctor-info h3 {
+    text-align: center;     /* Keep the heading centered */
+    margin-bottom: 15px;
+    color: #0056b3;         /* Optional: matches your theme */
+}
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(224, 27, 36, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: #c41e3a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(224, 27, 36, 0.4);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            box-shadow: 0 4px 15px rgba(26, 95, 180, 0.3);
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .section-title p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: #666;
+        }
+        
+
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        header.sticky {
+            padding: 5px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo i {
+            color: var(--secondary-color);
+            font-size: 28px;
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            color: var(--light-color);
+            animation: fadeInUp 1s ease;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        .scroll-indicator i {
+            color: var(--light-color);
+            font-size: 30px;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--gray-light);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            order: 2;
+        }
+        
+        .about-text h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+            text-align: center;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+            order: 1;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        .doctor-info {
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .doctor-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--secondary-color);
+        }
+        
+        .doctor-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+        
+        .doctor-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .doctor-info p i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        
+        .doctor-info p strong {
+            color: var(--dark-color);
+            min-width: 120px;
+            display: inline-block;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background-color: var(--light-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: 1px solid var(--gray-medium);
+            position: relative;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .service-icon i {
+            font-size: 2.5rem;
+            color: var(--light-color);
+        }
+        
+        .service-content {
+            padding: 25px 15px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+        
+        .service-card p {
+            color: #666;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--gray-light);
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 80px;
+            color: rgba(26, 95, 180, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            color: #555;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+        
+        /* Facilities Section */
+        .facilities {
+            background-color: var(--light-color);
+        }
+        
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .facility-card {
+            text-align: center;
+            padding: 25px 15px;
+            border-radius: 15px;
+            background-color: var(--gray-light);
+            transition: var(--transition);
+        }
+        
+        .facility-card:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            transform: translateY(-10px);
+        }
+        
+        .facility-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+        
+        .facility-card:hover .facility-icon {
+            color: var(--light-color);
+        }
+        
+        .facility-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--gray-light);
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .contact-info, .contact-form {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .contact-info p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
+        .contact-form {
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray-medium);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(26, 95, 180, 0.1);
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .map-container {
+            margin-top: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 300px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-color), #1a1a1a);
+            color: var(--light-color);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo, .footer-links, .footer-contact, .footer-subscribe {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+        
+        .footer-logo h2 {
+            color: var(--light-color);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .footer-logo p {
+            color: #aaa;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light-color);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links h3, .footer-contact h3, .footer-subscribe h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--light-color);
+            text-align: center;
+        }
+        
+        .footer-links h3::after, .footer-contact h3::after, .footer-subscribe h3::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            margin-top: 5px;
+            color: var(--secondary-color);
+            flex-shrink: 0;
+        }
+        
+        .footer-subscribe p {
+            color: #aaa;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .subscribe-form {
+            display: flex;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        .subscribe-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light-color);
+        }
+        
+        .subscribe-form input::placeholder {
+            color: #aaa;
+        }
+        
+        .subscribe-form button {
+            padding: 12px 15px;
+            background-color: var(--secondary-color);
+            border: none;
+            border-radius: 0 50px 50px 0;
+            color: var(--light-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .subscribe-form button:hover {
+            background-color: #c41e3a;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (min-width: 768px) 
+        {
+            .about-content {
+                flex-direction: row;
+            }
+            
+            .about-text {
+                order: 1;
+            }
+            
+            .about-image {
+                order: 2;
+            }
+            
+            .about-text h3, .doctor-info h3 {
+                text-align: left;
+            }
+            
+            .about-text p {
+                text-align: left;
+            }
+            
+            .testimonials-container {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .contact-content {
+                flex-direction: row;
+            }
+            
+            .footer-content {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .footer-links h3::after, .footer-contact h3::after, .footer-subscribe h3::after {
+                left: 0;
+                transform: none;
+            }
+            
+            .footer-links ul {
+                justify-content: flex-start;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .footer-links a {
+                padding: 0;
+                background-color: transparent;
+            }
+            
+            .footer-links a:hover {
+                transform: translateX(5px);
+            }
+            
+            .footer-logo h2, .footer-logo p {
+                text-align: left;
+            }
+            
+            .social-links {
+                justify-content: flex-start;
+            }
+            
+            .footer-subscribe p {
+                text-align: left;
+            }
+            
+            .subscribe-form {
+                margin: 0;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .hero h2 {
+                font-size: 3.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title p {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 100px 0;
+            }
+            
+            .section-title {
+                margin-bottom: 60px;
+            }
+            
+            .nav-links li {
+                margin-left: 35px;
+            }
+            
+            .logo h1 {
+                font-size: 28px;
+            }
+            
+            .logo i {
+                font-size: 32px;
+            }
+            
+            .about-text h3 {
+                font-size: 1.8rem;
+            }
+            
+            .doctor-info h3 {
+                font-size: 1.5rem;
+            }
+            
+            .service-icon {
+                height: 100px;
+            }
+
+            
+            
+            .service-icon i {
+                font-size: 3rem;
+            }
+            
+            .service-content {
+                padding: 30px 20px;
+            }
+            
+            .service-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .facility-icon {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+            
+            .facility-card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .contact-item {
+                padding: 20px;
+            }
+            
+            .contact-icon {
+                font-size: 1.8rem;
+                margin-right: 20px;
+            }
+            
+            .contact-info h3 {
+                font-size: 1.3rem;
+            }
+            
+            .contact-form {
+                padding: 30px;
+            }
+            
+            .map-container {
+                height: 400px;
+            }
+            
+            footer {
+                padding: 70px 0 20px;
+            }
+            
+            .footer-content {
+                margin-bottom: 50px;
+            }
+            
+            .whatsapp-btn {
+                width: 70px;
+                height: 70px;
+                font-size: 35px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.5s ease;
+                z-index: 999;
+            }
+            
+            .doctor-info {
+                text-align: left;   /* Keep content aligned properly */
+                font-size: 15px;
+            }
+
+            .doctor-info p {
+              display: flex;
+              align-items: flex-start;
+              text-align: left;
+              gap: 8px;          
+              margin: 8px 0;
+            }
+
+            .doctor-info i {
+                min-width: 20px;    
+                color: #d32f2f;     
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .whatsapp-btn {
+                bottom: 80px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="./logo.png" alt="" width="100px" height="50px">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Move, Feel & Live Better</h2>
+                <p>Professional physiotherapy care to help you regain health and vitality</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Book Appointment</a>
+                    <a href="#services" class="btn btn-outline">Our Services</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>ShreeVed Physio Care is dedicated to providing professional rehabilitation services to help patients recover and improve their quality of life</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Journey to Recovery Starts Here</h3>
+                    <p>ShreeVed Physio Care is a professional rehabilitation center with an experienced medical team and advanced equipment. We are committed to providing personalized rehabilitation treatment plans for each patient to help them recover quickly and regain vitality.</p>
+                    <p>Our mission is to help patients reduce pain, restore function, and improve quality of life through professional physical therapy and rehabilitation care. Whether you have sports injuries, orthopedic problems, or neurological conditions, we can provide the most suitable treatment plan for you.</p>
+                    
+                    <div class="doctor-info">
+                        <h3>Meet Our Specialist</h3>
+                        <p><i class="fas fa-user-md"></i> <strong>Name:</strong> Dr. Snehi Mishra (PT)</p>
+                        <p><i class="fas fa-certificate"></i> <strong>Qualifications:</strong> BPT, MPT (Neurology)</p>
+                        <p><i class="fas fa-stethoscope"></i> <strong>Specialization:</strong> Neurological Physical Therapy, Orthopedic Rehabilitation, Sports Injury Treatment</p>
+                        <p><i class="fas fa-history"></i> <strong>Experience:</strong> Several years of clinical experience, specializing in rehabilitation therapy</p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/e9bc7cff-0a73-441f-9be8-5ba6bd42657b_pasted_image_1756838053476.png?auth_key=1788374244-84518bde558d4686b3e052a0f160ffc7-0-c86fa29dea4f8f66f4cc8d7724a18088" alt="ShreeVed Physio Care">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer a variety of professional rehabilitation services to meet the needs of different patients</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Orthopedic Physical Therapy</h3>
+                        <p>Rehabilitation for fractures, arthritis, spinal problems and other orthopedic conditions</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Neurological Physical Therapy</h3>
+                        <p>Rehabilitation for stroke, Parkinson's, brain injuries and other neurological conditions</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Posture Correction</h3>
+                        <p>Improve poor posture and prevent posture-related problems</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Sports Injuries</h3>
+                        <p>Treatment and prevention of sports-related injuries</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Cardiac Rehabilitation</h3>
+                        <p>Rehabilitation and health management for heart patients</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Post-Surgical Rehabilitation</h3>
+                        <p>Rehabilitation after various surgeries to accelerate recovery</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Geriatric Rehabilitation</h3>
+                        <p>Specialized rehabilitation for the elderly to improve quality of life</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-medical"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Pain Management</h3>
+                        <p>Non-pharmacological treatment and management of various chronic pain conditions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Patients Say</h2>
+                <p>Real stories from people who have regained their health at ShreeVed Physio Care</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>After my knee surgery, I thought I would never walk properly again. Thanks to the dedicated team at ShreeVed Physio Care, I'm now back to my active lifestyle. The personalized treatment plan made all the difference.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Orthopedic Rehabilitation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>Dr. Snehi Mishra is a miracle worker! After my stroke, I lost hope of ever using my left arm again. Her expertise and patience during my neurological therapy helped me regain almost full functionality.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Neurological Rehabilitation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>As a professional athlete, a sports injury could have ended my career. The team at ShreeVed Physio Care not only helped me recover but also taught me preventive techniques. I'm stronger than ever before!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Vikram Singh</h4>
+                            <p>Sports Injury Treatment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Facilities</h2>
+                <p>State-of-the-art equipment and comfortable environment for your recovery journey</p>
+            </div>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Modern Gym Equipment</h3>
+                    <p>Latest rehabilitation and fitness equipment for effective therapy</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Hydrotherapy Pool</h3>
+                    <p>Specialized pool for aquatic therapy and low-impact exercises</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Private Treatment Rooms</h3>
+                    <p>Comfortable and private spaces for personalized treatment sessions</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <h3>Accessibility Features</h3>
+                    <p>Fully accessible facility with ramps and support for all patients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or need to book an appointment, please feel free to contact us</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Address</h3>
+                            <p>214, Nagar Nigam Colony, Behind SBI Bank Agrasen Chowk, Raipur, Chhattisgarh 492001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt fa-flip-horizontal"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>8871161265</p>
+                            <p>7069185348</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@shreevedphysiocare.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.299518543732!2d81.6296!3d21.2514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDE1JzA1LjAiTiA4McKwMzcnNDYuNSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="appointmentForm">
+                        <h3 style="margin-bottom: 20px; color: var(--primary-color); text-align: center;">Book an Appointment</h3>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Required</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="orthopedic">Orthopedic Physical Therapy</option>
+                                <option value="neurological">Neurological Physical Therapy</option>
+                                <option value="posture">Posture Correction</option>
+                                <option value="sports">Sports Injuries</option>
+                                <option value="cardiac">Cardiac Rehabilitation</option>
+                                <option value="post-surgical">Post-Surgical Rehabilitation</option>
+                                <option value="geriatric">Geriatric Rehabilitation</option>
+                                <option value="pain">Pain Management</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your condition or any specific requirements"></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Book Appointment</button>
+                    </form>
+                </div>  
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./logo.png" alt="" width="100px" height="50px">
+                    <p>Move, Feel & Live Better</p>
+                    <p>Professional rehabilitation services to help you regain your health and vitality.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 214, Nagar Nigam Colony, Behind SBI Bank Agrasen Chowk, Raipur, Chhattisgarh 492001</p>
+                    <p><i class="fas fa-phone-alt"></i> 8871161265, 7069185348</p>
+                    <p><i class="fas fa-envelope"></i> info@shreevedphysiocare.com</p>
+                </div>
+                <div class="footer-subscribe">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for health tips and updates</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 ShreeVed Physio Care. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/918871161265?text=Hi%20there!%20I'm%20interested%20in%20your%20physiotherapy%20services.%20Can%20you%20provide%20more%20information?" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Sticky Navigation
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would normally send the data to a server
+            // For this example, we'll just show a success message
+            const successMessage = document.createElement('div');
+            successMessage.style.position = 'fixed';
+            successMessage.style.top = '50%';
+            successMessage.style.left = '50%';
+            successMessage.style.transform = 'translate(-50%, -50%)';
+            successMessage.style.backgroundColor = 'var(--primary-color)';
+            successMessage.style.color = 'white';
+            successMessage.style.padding = '20px';
+            successMessage.style.borderRadius = '10px';
+            successMessage.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+            successMessage.style.zIndex = '10000';
+            successMessage.style.maxWidth = '80%';
+            successMessage.style.textAlign = 'center';
+            successMessage.innerHTML = `Thank you ${name}! Your appointment request for ${service} on ${date} has been received. We will contact you soon at ${phone} to confirm your appointment.`;
+            
+            document.body.appendChild(successMessage);
+            
+            // Remove the message after 5 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 5000);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Newsletter subscription
+        document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            
+            // Show success message
+            const successMessage = document.createElement('div');
+            successMessage.style.position = 'fixed';
+            successMessage.style.top = '50%';
+            successMessage.style.left = '50%';
+            successMessage.style.transform = 'translate(-50%, -50%)';
+            successMessage.style.backgroundColor = 'var(--primary-color)';
+            successMessage.style.color = 'white';
+            successMessage.style.padding = '20px';
+            successMessage.style.borderRadius = '10px';
+            successMessage.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+            successMessage.style.zIndex = '10000';
+            successMessage.style.maxWidth = '80%';
+            successMessage.style.textAlign = 'center';
+            successMessage.innerHTML = `Thank you for subscribing with email: ${email}. You will receive our latest updates and health tips.`;
+            
+            document.body.appendChild(successMessage);
+            
+            // Remove the message after 5 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 5000);
+            
+            this.reset();
+        });
+    </script>
+</body>
+</html>
